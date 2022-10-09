@@ -1,0 +1,70 @@
+body {
+  background-color: #000;
+}
+
+.planet{
+  position: absolute;
+  top:42%;
+  left:43%;
+  width:140px;
+  height:140px;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    #fff 15%,
+    #481c98,
+    #3c1780
+  );
+  box-shadow: 0px 0px 39px 27px rgba(182, 0, 225, 0.6);
+  transform-style: preserve-3d;
+  transform: rotateZ(-15deg);
+}
+
+.planet::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 16px solid rgba(182, 0, 225, 0.6);
+  border-top-width: 0;
+  border-radius: 50%;
+  box-shadow: 0 -2px 0 #fff;
+  animation: rings1 3s infinite linear;
+}
+.planet::after {
+  position: absolute;
+  content: "";
+  /* display: block; */
+  width: 150%;
+  height: 150%;
+  right:-25%;
+  top:-25%;
+  box-sizing: border-box;
+  border: 20px solid rgba(182, 0, 225, 0.6);
+  border-top-width: 0;
+  border-radius: 50%;
+  box-shadow: 0 -2px 0 #fff;
+  animation: rings1 8s infinite linear;
+}
+
+@keyframes rings1 {
+  0% {
+    transform: rotateX(0deg) rotateZ(0deg) scale(1.75);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateZ(360deg) scale(1.75);
+  }
+}
+
+@keyframes rings2 {
+  0% {
+    transform: rotateX(360deg) rotateZ(360deg) scale(1.75);
+  }
+
+  100% {
+    transform: rotateX(0deg) rotateZ(0deg) scale(1.75);
+  }
+}
